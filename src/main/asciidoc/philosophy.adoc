@@ -1,6 +1,6 @@
 == Philosophy
 
-Testatoo is a strongly opinionated tool. There is no anonymous "WebElement";everything needs to be a *COMPONENT*.
+Testatoo is a strongly opinionated tool. There is no anonymous "WebElement". Everything needs to be a *COMPONENT*.
 Testatoo is a strongly typed UI component tool.
 
 In the previous sample the line:

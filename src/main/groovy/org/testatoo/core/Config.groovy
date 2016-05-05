@@ -32,6 +32,13 @@ class Config {
     Duration waitUntil = 2.seconds
 
     /**
+     * Sets the default evaluator to use
+     */
+    Evaluator evaluator
+
+    final Collection<Class<Component>> componentTypes = new HashSet<>()
+
+    /**
      * Scan for packages containing custom component
      */
     void scan(String... packageNames) {
@@ -48,11 +55,4 @@ class Config {
     static void debug(boolean debug) {
         Log.debug = debug
     }
-
-    final Collection<Class<Component>> componentTypes = new HashSet<>()
-
-    /**
-     * Sets the default evaluator to use
-     */
-    Evaluator evaluator
 }

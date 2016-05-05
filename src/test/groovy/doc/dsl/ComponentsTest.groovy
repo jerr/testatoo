@@ -66,6 +66,15 @@ class ComponentsTest {
 
     @Test
     public void should_have_expected_properties_and_states_supported_by_button() {
+
+//        Trouver toutes les classe qui on un identifier + inherite from buuton
+//        List<Button> buttons = new ArrayList<>()
+//        buttons.find {
+//            it.text() == 'My Button Text'
+//        }
+
+//        Button button = button 'My Button Text'
+
         Button button = $('#btn') as Button
         // tag::button[]
         button.should { have text('My Button Text') }

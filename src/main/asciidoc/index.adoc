@@ -24,13 +24,13 @@ include::installation.adoc[]
 
 include::philosophy.adoc[]
 
-include::content_interaction.adoc[]
-
 include::testatoo_language.adoc[]
 
 include::BDD_style.adoc[]
 
 include::components_reference.adoc[]
+
+include::content_interaction.adoc[]
 
 include::html5_bundle.adoc[]
 

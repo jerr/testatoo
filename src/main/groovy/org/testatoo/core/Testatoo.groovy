@@ -15,6 +15,7 @@
  */
 package org.testatoo.core
 
+import org.testatoo.core.component.Button
 import org.testatoo.core.component.Component
 import org.testatoo.core.component.Group
 import org.testatoo.core.component.Item

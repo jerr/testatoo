@@ -21,7 +21,7 @@ import org.testatoo.core.input.MouseModifiers
 /**
  * @author David Avenante (d.avenante@gmail.com)
  */
-abstract trait Evaluator implements AutoCloseable {
+interface Evaluator {
     abstract <T> T getImplementation(Class<T> type)
 
     abstract void open(String url)
@@ -30,9 +30,9 @@ abstract trait Evaluator implements AutoCloseable {
 
     abstract void registerScripts(String... scripts)
 
-    abstract String eval(String id, String jsExpr)
+    abstract String eval(String id, String expression)
 
-    abstract boolean check(String id, String jsExpr)
+    abstract boolean check(String id, String expression)
 
     abstract void trigger(String id, String event)
 
@@ -56,9 +56,9 @@ abstract trait Evaluator implements AutoCloseable {
 
     abstract void refresh()
 
-    abstract <T> T getJson(String jQueryExpr)
+    abstract <T> T getJson(String query)
 
-    abstract List<MetaInfo> metaInfo(String jQueryExpr)
+    abstract List<MetaInfo> metaInfo(String query)
 
     abstract void type(Collection<?> keys)
 
