@@ -21,7 +21,7 @@ import org.junit.runners.JUnit4
 import org.testatoo.core.support.*
 
 import static org.mockito.Mockito.*
-import static org.testatoo.core.Actions.*
+import static org.testatoo.core.Testatoo.*
 
 /**
  * @author David Avenante (d.avenante@gmail.com)
@@ -69,7 +69,7 @@ class ActionTest {
         Resettable resettable_cmp = mock(Resettable)
 
         verify(resettable_cmp, times(0)).reset()
-        Actions.reset resettable_cmp
+        reset resettable_cmp
         verify(resettable_cmp, times(1)).reset()
     }
 

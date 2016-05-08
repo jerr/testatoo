@@ -24,7 +24,6 @@ import org.testatoo.WebDriverConfig
 import org.testatoo.bundle.html5.Button
 import org.testatoo.bundle.html5.input.InputTypeText
 
-import static Actions.fill
 import static org.testatoo.core.Testatoo.*
 
 /**
@@ -38,7 +37,6 @@ class SelectorTest {
 
     @BeforeClass
     public static void before() {
-        config.scan 'org.testatoo'
         browser.open 'http://localhost:8080/selectors.html'
     }
 

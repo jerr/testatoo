@@ -15,7 +15,6 @@
  */
 package org.testatoo.core
 
-import org.testatoo.core.component.Button
 import org.testatoo.core.component.Component
 import org.testatoo.core.component.Group
 import org.testatoo.core.component.Item
@@ -26,6 +25,12 @@ import org.testatoo.core.input.Keyboard
 import org.testatoo.core.input.Mouse
 import org.testatoo.core.internal.CachedMetaData
 import org.testatoo.core.internal.jQueryIdProvider
+import org.testatoo.core.support.Checkable
+import org.testatoo.core.support.Clearable
+import org.testatoo.core.support.Resettable
+import org.testatoo.core.support.Submissible
+import org.testatoo.core.support.UnCheckable
+import org.testatoo.core.support.property.InputSupport
 import org.testatoo.hamcrest.matcher.property.*
 import org.testatoo.hamcrest.matcher.state.*
 
@@ -71,6 +76,37 @@ class Testatoo {
     static {
         config.scan 'org.testatoo.bundle.html5'
     }
+
+    // Actions
+    static void visit(String uri) { browser.open(uri) }
+    static Component check(Checkable c) { c.check() }
+    static Component uncheck(UnCheckable c) { c.uncheck() }
+    static void type(String text) { Keyboard.type(text) }
+    static void clear(Clearable c) { c.clear() }
+    static void reset(Resettable c) { c.reset() }
+    static void submit(Submissible c) { c.submit() }
+    static <T extends Component> T on(Component c) { c as T }
+    static void select(Item... items) { items.each { it.select() } }
+    static void unselect(Item... items) { items.each { it.unselect() } }
+    static final FillAction fill(InputSupport c) { new FillAction(c) }
+    static final FillAction set(InputSupport c) { new FillAction(c) }
+
+    public static class FillAction {
+        private InputSupport input
+
+        public FillAction(InputSupport input) {
+            this.input = input
+        }
+
+        public void with(Object value) {
+            input.value(value)
+        }
+
+        public void to(Object value) {
+            input.value(value)
+        }
+    }
+
 
     // States
     public static Class available = AvailableMatcher

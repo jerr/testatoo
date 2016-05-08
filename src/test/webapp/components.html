@@ -88,7 +88,7 @@
 
         <label class="control-label" for="password_field">Password</label>
         <div class="controls">
-          <input type="password" id="password_field" placeholder="Password" value="?art">
+          <input type="password" id="password_field" maxlength="15" placeholder="Password" value="?art">
         </div>
 
         <label class="control-label" for="email_field">Email</label>
@@ -105,7 +105,7 @@
 
         <label class="control-label" for="url_field">URL</label>
         <div class="controls">
-          <input type="url" id="url_field" placeholder="www.mysite.org">
+          <input type="url" id="url_field" maxlength="255" placeholder="www.mysite.org">
         </div>
 
         <label class="control-label" for="search_field">Search</label>
@@ -163,7 +163,7 @@
 
         <label class="control-label" for="text_area_field">TextArea</label>
         <div class="controls">
-          <textarea id="text_area_field" rows="4" cols="50">Text area</textarea>
+          <textarea id="text_area_field" maxlength="600" rows="4" cols="50">Text area</textarea>
         </div>
       </div>
     </div>
@@ -301,33 +301,33 @@
       <thead>
       <tr>
         <th></th>
-        <th>Column 1 title</th>
-        <th>Column 2 title</th>
-        <th>Column 3 title</th>
+        <th>Column title 1</th>
+        <th>Column title 2</th>
+        <th>Column title 3</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-        <th>Row 1</th>
+        <th>Row title 1</th>
         <td>cell 11</td>
         <td>cell 12</td>
         <td>cell 13</td>
       </tr>
       <tr>
-        <th>Row 2</th>
+        <th>Row title 2</th>
         <td>cell 21</td>
         <td>cell 22</td>
         <td>cell 23</td>
       </tr>
       <tr>
-        <th>Row 3</th>
+        <th>Row title 3</th>
         <td>cell 31</td>
         <td>cell 32</td>
         <td>cell 33</td>
       </tr>
       <tr>
-        <th>Row 4</th>
+        <th>Row title 4</th>
         <td>cell 41</td>
         <td>cell 42</td>
         <td>cell 43</td>
@@ -337,9 +337,9 @@
       <tfoot>
       <tr>
         <th></th>
-        <td>footer 1</td>
-        <td>footer 2</td>
-        <td>footer 3</td>
+        <td>footer title 1</td>
+        <td>footer title 2</td>
+        <td>footer title 3</td>
       </tr>
       </tfoot>
 

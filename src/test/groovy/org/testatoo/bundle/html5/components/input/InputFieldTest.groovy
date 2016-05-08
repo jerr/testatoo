@@ -263,4 +263,17 @@ class InputFieldTest {
         week.value('2016-W32')
         assert week.value() == '2016-W32'
     }
+
+    @Test
+    public void some_input_should_have_length_support() {
+        InputTypeSearch searchField = $('#search_field') as InputTypeSearch
+        InputTypePassword password = $('#password_field') as InputTypePassword
+        InputTypeURL url = $('#url_field') as InputTypeURL
+        TextArea textArea = $('#text_area_field') as TextArea
+
+        assert searchField.length() == -1
+        assert password.length() == 15
+        assert url.length() == 255
+        assert textArea.length() == 600
+    }
 }

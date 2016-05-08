@@ -55,9 +55,9 @@ class TableGridTest {
         List<Column> columns = data_grid.columns()
 
         assert columns[0].title() == ''
-        assert columns[1].title() == 'Column 1 title'
-        assert columns[2].title() == 'Column 2 title'
-        assert columns[3].title() == 'Column 3 title'
+        assert columns[1].title() == 'Column title 1'
+        assert columns[2].title() == 'Column title 2'
+        assert columns[3].title() == 'Column title 3'
 
         assert columns[1].cells().size() == 4
 
@@ -74,10 +74,10 @@ class TableGridTest {
 
         assert rows[0].cells().size() == 3
 
-        assert rows[0].title() == 'Row 1'
-        assert rows[1].title() == 'Row 2'
-        assert rows[2].title() == 'Row 3'
-        assert rows[3].title() == 'Row 4'
+        assert rows[0].title() == 'Row title 1'
+        assert rows[1].title() == 'Row title 2'
+        assert rows[2].title() == 'Row title 3'
+        assert rows[3].title() == 'Row title 4'
 
         cells = rows[1].cells()
 
@@ -93,8 +93,26 @@ class TableGridTest {
         DataGrid data_grid = $('#data_grid') as Table
 
         data_grid.column('').title() == ''
-        data_grid.column('Column 1 title').title() == 'Column 1 title'
-        data_grid.column('Column 2 title').title() == 'Column 2 title'
-        data_grid.column('Column 3 title').title() == 'Column 3 title'
+        data_grid.column('Column title 1').title() == 'Column title 1'
+        data_grid.column('Column title 2').title() == 'Column title 2'
+        data_grid.column('Column title 3').title() == 'Column title 3'
+    }
+
+    @Test
+    public void should_access_to_row_by_title() {
+        DataGrid data_grid = $('#data_grid') as Table
+
+        data_grid.row('Row title 1').title() == 'Row title 1'
+        data_grid.row('Row title 2').title() == 'Row title 2'
+        data_grid.row('Row title 3').title() == 'Row title 3'
+        data_grid.row('Row title 4').title() == 'Row title 4'
+    }
+
+    @Test
+    public void should_access_to_cell_by_value() {
+        DataGrid data_grid = $('#data_grid') as Table
+
+        data_grid.columns()[3].cell('cell 43').value() == 'cell 43'
+        data_grid.rows()[0].cell('cell 13').value() == 'cell 13'
     }
 }

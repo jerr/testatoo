@@ -21,7 +21,6 @@ import org.testatoo.core.component.datagrid.DataGrid
 import org.testatoo.core.component.datagrid.Row
 import org.testatoo.core.component.field.*
 
-import static org.testatoo.core.Actions.*
 import static org.testatoo.core.Testatoo.*
 
 /**
@@ -354,17 +353,17 @@ class ComponentsTest {
         // tag::datagrid[]
         datagrid.should {
             have 4.columns
-            have columns('', 'Column 1 title', 'Column 2 title', 'Column 3 title')
+            have columns('', 'Column title 1', 'Column title 2', 'Column title 3')
 
             have 4.rows
-            have rows('Row 1', 'Row 2', 'Row 3', 'Row 4')
+            have rows('Row title 1', 'Row title 2', 'Row title 3', 'Row title 4')
         }
         // end::datagrid[]
 
         // tag::column[]
-        Column column = datagrid.column('Column 2 title') // Or datagrid.columns[2]
+        Column column = datagrid.column('Column title 2') // Or datagrid.columns[2]
         column.should {
-            have title('Column 2 title')
+            have title('Column title 2')
 
             have 4.cells
             have cells('cell 12', 'cell 22', 'cell 32', 'cell 42')
@@ -372,9 +371,9 @@ class ComponentsTest {
         // end::column[]
 
         // tag::row[]
-        Row row = datagrid.row('Row 3') // Or datagrid.row[2]
+        Row row = datagrid.row('Row title 3') // Or datagrid.row[2]
         row.should {
-            have title('Row 3')
+            have title('Row title 3')
 
             have 3.cells
             have cells('cell 31', 'cell 32', 'cell 33')

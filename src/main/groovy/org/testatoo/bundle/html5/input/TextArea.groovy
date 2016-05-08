@@ -15,6 +15,7 @@
  */
 package org.testatoo.bundle.html5.input
 
+import org.testatoo.core.ByCss
 import org.testatoo.core.component.field.TextField
 
 import static org.testatoo.core.Testatoo.getConfig
@@ -22,6 +23,7 @@ import static org.testatoo.core.Testatoo.getConfig
 /**
  * @author David Avenante (d.avenante@gmail.com)
  */
+@ByCss('textarea')
 class TextArea extends TextField implements Input {
     @Override
     Number length() {
